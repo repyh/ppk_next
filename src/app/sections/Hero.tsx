@@ -110,41 +110,26 @@ export default function Hero() {
 
           {/* Stats */}
           <motion.div
-            className="grid grid-cols-3 gap-8 mt-16 max-w-2xl mx-auto"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12 mt-16 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
           >
             <div className="text-center">
-              <div className="text-3xl font-bold text-green-600 mb-1">50+</div>
-              <div className="text-gray-600 text-sm">UMKM Terdaftar</div>
+              <div className="text-3xl md:text-4xl font-bold text-green-600 mb-2">50+</div>
+              <div className="text-gray-600 text-sm md:text-base">UMKM Terdaftar</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-green-600 mb-1">15+</div>
-              <div className="text-gray-600 text-sm">Kategori Usaha</div>
+              <div className="text-3xl md:text-4xl font-bold text-green-600 mb-2">15+</div>
+              <div className="text-gray-600 text-sm md:text-base">Kategori Usaha</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-green-600 mb-1">1000+</div>
-              <div className="text-gray-600 text-sm">Pelanggan Puas</div>
+              <div className="text-3xl md:text-4xl font-bold text-green-600 mb-2">1000+</div>
+              <div className="text-gray-600 text-sm md:text-base">Pelanggan Puas</div>
             </div>
           </motion.div>
         </motion.div>
       </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-      >
-        <div className="w-6 h-10 border-2 border-green-400 rounded-full flex justify-center">
-          <motion.div
-            className="w-1 h-3 bg-green-500 rounded-full mt-2"
-            animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          />
-        </div>
-      </motion.div>
     </section>
   );
 }
