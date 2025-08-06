@@ -2,7 +2,17 @@ import { umkmData } from '@/data/umkm';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 
-export default function UMKMDetailPage({ params }: { params: { id: string } }) {
+export async function generateStaticParams() {
+	return umkmData.map((umkm) => ({
+		id: umkm.id.toString(),
+	}));
+}
+
+export default async function UMKMDetailPage({
+	params,
+}: {
+	params: { id: string };
+}) {
 	const umkm = umkmData.find((u) => u.id.toString() === params.id);
 
 	if (!umkm) {
