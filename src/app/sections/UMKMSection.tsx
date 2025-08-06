@@ -15,11 +15,14 @@ const filterOptions = [
 	'Kesehatan',
 ];
 
+const ITEMS_PER_PAGE = 6;
+
 export default function UMKMSection() {
 	const [selectedFilter, setSelectedFilter] = useState('Semua');
 	const [searchTerm, setSearchTerm] = useState('');
+	const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
 
-	const filteredUMKM = umkmData.filter((umkm) => {
+	const filteredUMKMData = umkmData.filter((umkm) => {
 		const matchesFilter =
 			selectedFilter === 'Semua' || umkm.category === selectedFilter;
 		const matchesSearch =
@@ -27,6 +30,12 @@ export default function UMKMSection() {
 			umkm.description.toLowerCase().includes(searchTerm.toLowerCase());
 		return matchesFilter && matchesSearch;
 	});
+
+	const filteredUMKM = filteredUMKMData.slice(0, visibleCount);
+
+	const loadMore = () => {
+		setVisibleCount((prevCount) => prevCount + ITEMS_PER_PAGE);
+	};
 
 	return (
 		<section id="umkm" className="py-20 bg-white">
@@ -133,6 +142,10 @@ export default function UMKMSection() {
 						<span className="font-semibold text-emerald-600">
 							{filteredUMKM.length}
 						</span>{' '}
+						dari{' '}
+						<span className="font-semibold text-emerald-600">
+							{filteredUMKMData.length}
+						</span>{' '}
 						UMKM
 						{selectedFilter !== 'Semua' && (
 							<span>
@@ -183,7 +196,7 @@ export default function UMKMSection() {
 				)}
 
 				{/* Load More Button */}
-				{filteredUMKM.length > 0 && (
+				{filteredUMKM.length > 0 && visibleCount < filteredUMKMData.length && (
 					<motion.div
 						className="text-center mt-12"
 						initial={{ opacity: 0, y: 20 }}
@@ -192,6 +205,7 @@ export default function UMKMSection() {
 						viewport={{ once: true }}
 					>
 						<motion.button
+							onClick={loadMore}
 							className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-semibold border-2 border-emerald-200 hover:border-emerald-300 hover:bg-emerald-50 transition-all duration-300"
 							whileHover={{ scale: 1.05, y: -2 }}
 							whileTap={{ scale: 0.95 }}
