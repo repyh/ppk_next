@@ -3,7 +3,17 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import UMKMCard from '@/components/UMKMCard';
-import { umkmData, filterOptions } from '@/items/umkm';
+import { umkmData } from '@/data/umkm';
+
+const filterOptions = [
+	'Semua',
+	'Kuliner',
+	'Fashion',
+	'Kerajinan',
+	'Jasa',
+	'Teknologi',
+	'Kesehatan',
+];
 
 export default function UMKMSection() {
 	const [selectedFilter, setSelectedFilter] = useState('Semua');
