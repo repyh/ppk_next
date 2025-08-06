@@ -73,7 +73,7 @@ export default function UMKMModal({ isOpen, onClose, umkm }: UMKMModalProps) {
 									}`}>
 										{umkm.status}
 									</span>
-									<span className="px-3 py-1 bg-emerald-500 text-white rounded-full text-sm font-semibold">
+									<span className="px-3 py-1 bg-[#84A9AC] text-white rounded-full text-sm font-semibold">
 										{umkm.category}
 									</span>
 								</div>
@@ -125,8 +125,8 @@ export default function UMKMModal({ isOpen, onClose, umkm }: UMKMModalProps) {
 								>
 									<div className="space-y-4">
 										<div className="flex items-center space-x-3">
-											<div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center">
-												<svg className="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+											<div className="w-10 h-10 bg-[#E6EBEB] rounded-lg flex items-center justify-center">
+												<svg className="w-5 h-5 text-[#34596F]" fill="currentColor" viewBox="0 0 20 20">
 													<path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
 												</svg>
 											</div>
@@ -137,8 +137,8 @@ export default function UMKMModal({ isOpen, onClose, umkm }: UMKMModalProps) {
 										</div>
 										
 										<div className="flex items-center space-x-3">
-											<div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-												<svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+											<div className="w-10 h-10 bg-[#E6EBEB] rounded-lg flex items-center justify-center">
+												<svg className="w-5 h-5 text-[#34596F]" fill="currentColor" viewBox="0 0 20 20">
 													<path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
 												</svg>
 											</div>
@@ -151,8 +151,8 @@ export default function UMKMModal({ isOpen, onClose, umkm }: UMKMModalProps) {
 
 									<div className="space-y-4">
 										<div className="flex items-center space-x-3">
-											<div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
-												<svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+											<div className="w-10 h-10 bg-[#E6EBEB] rounded-lg flex items-center justify-center">
+												<svg className="w-5 h-5 text-[#34596F]" fill="currentColor" viewBox="0 0 20 20">
 													<path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z" />
 													<path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clipRule="evenodd" />
 												</svg>
@@ -178,7 +178,7 @@ export default function UMKMModal({ isOpen, onClose, umkm }: UMKMModalProps) {
 												href={umkm.social_media.whatsapp}
 												target="_blank"
 												rel="noopener noreferrer"
-												className="flex items-center space-x-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg transition-colors"
+												className="flex items-center space-x-2 bg-[#84A9AC] hover:bg-[#34596F] text-white px-4 py-2 rounded-lg transition-colors"
 												whileHover={{ scale: 1.05 }}
 												whileTap={{ scale: 0.95 }}
 											>
@@ -207,7 +207,7 @@ export default function UMKMModal({ isOpen, onClose, umkm }: UMKMModalProps) {
 
 									<Link href={`/umkm/${umkm.id}`} passHref>
 										<motion.button
-											className="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 w-full sm:w-auto"
+											className="bg-gradient-to-r from-[#34596F] to-[#84A9AC] hover:from-[#204051] hover:to-[#34596F] text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 w-full sm:w-auto"
 											whileHover={{ scale: 1.05 }}
 											whileTap={{ scale: 0.95 }}
 										>

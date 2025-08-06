@@ -10,7 +10,7 @@ const categories = [
     icon: '🍜',
     description: 'Makanan dan minuman tradisional hingga modern',
     count: 15,
-    gradient: 'from-green-400 to-emerald-500'
+    gradient: 'from-[#84A9AC] to-[#34596F]'
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const categories = [
     icon: '👕',
     description: 'Pakaian, aksesoris, dan produk fashion',
     count: 8,
-    gradient: 'from-emerald-400 to-green-600'
+    gradient: 'from-[#84A9AC] to-[#34596F]'
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ const categories = [
     icon: '🎨',
     description: 'Produk handmade dan kerajinan tangan',
     count: 12,
-    gradient: 'from-green-500 to-emerald-600'
+    gradient: 'from-[#84A9AC] to-[#34596F]'
   },
   {
     id: 4,
@@ -34,7 +34,7 @@ const categories = [
     icon: '🔧',
     description: 'Layanan profesional dan teknis',
     count: 6,
-    gradient: 'from-emerald-600 to-green-700'
+    gradient: 'from-[#84A9AC] to-[#34596F]'
   },
   {
     id: 5,
@@ -42,7 +42,7 @@ const categories = [
     icon: '💻',
     description: 'IT, digital marketing, dan teknologi',
     count: 4,
-    gradient: 'from-green-600 to-emerald-700'
+    gradient: 'from-[#84A9AC] to-[#34596F]'
   },
   {
     id: 6,
@@ -50,7 +50,7 @@ const categories = [
     icon: '🏥',
     description: 'Produk kesehatan dan kecantikan',
     count: 5,
-    gradient: 'from-emerald-500 to-green-600'
+    gradient: 'from-[#84A9AC] to-[#34596F]'
   }
 ];
 
@@ -69,7 +69,7 @@ export default function Categories() {
           viewport={{ once: true }}
         >
           <motion.span
-            className="inline-block px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-semibold mb-4"
+            className="inline-block px-4 py-2 bg-[#E6EBEB] text-[#34596F] rounded-full text-sm font-semibold mb-4"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
@@ -80,7 +80,7 @@ export default function Categories() {
           
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 jakarta">
             Beragam Kategori
-            <span className="block bg-gradient-to-r from-emerald-600 to-green-600 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-[#34596F] to-[#84A9AC] bg-clip-text text-transparent">
               Usaha Lokal
             </span>
           </h2>
@@ -96,7 +96,7 @@ export default function Categories() {
             <motion.div
               key={category.id}
               className={`group relative bg-white rounded-2xl p-6 border-2 border-gray-100 hover:border-transparent transition-all duration-300 cursor-pointer ${
-                selectedCategory === category.id ? 'border-green-300 shadow-xl' : 'hover:shadow-xl'
+                selectedCategory === category.id ? 'border-[#84A9AC] shadow-xl' : 'hover:shadow-xl'
               }`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -118,7 +118,7 @@ export default function Categories() {
               </motion.div>
 
               {/* Content */}
-              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
+              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-[#34596F] transition-colors">
                 {category.name}
               </h3>
               
@@ -133,10 +133,10 @@ export default function Categories() {
                 </span>
                 
                 <motion.div
-                  className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-green-100 transition-colors"
+                  className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-[#E6EBEB] transition-colors"
                   whileHover={{ scale: 1.1 }}
                 >
-                  <svg className="w-4 h-4 text-gray-400 group-hover:text-green-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 text-gray-400 group-hover:text-[#34596F] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </motion.div>
@@ -153,7 +153,7 @@ export default function Categories() {
                   <p className="text-sm text-gray-500 mb-3">
                     Kategori ini mencakup berbagai jenis usaha yang telah terbukti berkualitas dan terpercaya.
                   </p>
-                  <button className="text-green-600 font-semibold text-sm hover:text-green-700 transition-colors">
+                  <button className="text-[#34596F] font-semibold text-sm hover:text-[#204051] transition-colors">
                     Lihat Semua UMKM →
                   </button>
                 </div>
@@ -171,7 +171,7 @@ export default function Categories() {
           viewport={{ once: true }}
         >
           <motion.button
-            className="bg-gradient-to-r from-emerald-500 to-green-600 text-white px-8 py-3 rounded-xl font-semibold hover:from-emerald-600 hover:to-green-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="bg-gradient-to-r from-[#34596F] to-[#84A9AC] text-white px-8 py-3 rounded-xl font-semibold hover:from-[#204051] hover:to-[#34596F] transition-all duration-300 shadow-lg hover:shadow-xl"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >

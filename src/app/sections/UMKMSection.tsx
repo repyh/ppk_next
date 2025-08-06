@@ -22,6 +22,12 @@ export default function UMKMSection() {
 	const [searchTerm, setSearchTerm] = useState('');
 	const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
 
+	// Handle search input change
+	const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const value = e.target.value;
+		setSearchTerm(value);
+	};
+
 	const filteredUMKMData = umkmData.filter((umkm) => {
 		const matchesFilter =
 			selectedFilter === 'Semua' || umkm.category === selectedFilter;
@@ -49,7 +55,7 @@ export default function UMKMSection() {
 					viewport={{ once: true }}
 				>
 					<motion.span
-						className="inline-block px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full text-sm font-semibold mb-4"
+						className="inline-block px-4 py-2 bg-[#E6EBEB] text-[#34596F] rounded-full text-sm font-semibold mb-4"
 						initial={{ opacity: 0, scale: 0.8 }}
 						whileInView={{ opacity: 1, scale: 1 }}
 						transition={{ delay: 0.2 }}
@@ -60,7 +66,7 @@ export default function UMKMSection() {
 
 					<h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 jakarta">
 						UMKM Terpercaya
-						<span className="block bg-gradient-to-r from-emerald-600 to-green-600 bg-clip-text text-transparent">
+						<span className="block bg-gradient-to-r from-[#34596F] to-[#84A9AC] bg-clip-text text-transparent">
 							di Kelapa Dua
 						</span>
 					</h2>
@@ -84,11 +90,12 @@ export default function UMKMSection() {
 					<div className="max-w-md mx-auto mb-8">
 						<div className="relative">
 							<input
+								id="umkm-search"
 								type="text"
 								placeholder="Cari UMKM..."
 								value={searchTerm}
-								onChange={(e) => setSearchTerm(e.target.value)}
-								className="w-full px-4 py-3 pl-12 pr-4 bg-white border-2 border-gray-200 rounded-xl focus:border-emerald-400 focus:outline-none transition-colors"
+								onChange={handleSearchChange}
+								className="w-full px-4 py-3 pl-12 pr-4 bg-white border-2 border-gray-200 rounded-xl focus:border-[#84A9AC] focus:outline-none transition-colors text-gray-900 placeholder-gray-500"
 							/>
 							<svg
 								className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
@@ -113,8 +120,8 @@ export default function UMKMSection() {
 								key={filter}
 								className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
 									selectedFilter === filter
-										? 'bg-emerald-500 text-white shadow-lg'
-										: 'bg-white text-gray-600 hover:bg-emerald-50 hover:text-emerald-600'
+										? 'bg-[#34596F] text-white shadow-lg'
+										: 'bg-white text-gray-600 hover:bg-[#F0F4F8] hover:text-[#34596F]'
 								}`}
 								onClick={() => setSelectedFilter(filter)}
 								initial={{ opacity: 0, scale: 0.8 }}
@@ -139,11 +146,11 @@ export default function UMKMSection() {
 				>
 					<p className="text-gray-600">
 						Menampilkan{' '}
-						<span className="font-semibold text-emerald-600">
+						<span className="font-semibold text-[#34596F]">
 							{filteredUMKM.length}
 						</span>{' '}
 						dari{' '}
-						<span className="font-semibold text-emerald-600">
+						<span className="font-semibold text-[#34596F]">
 							{filteredUMKMData.length}
 						</span>{' '}
 						UMKM
@@ -151,7 +158,7 @@ export default function UMKMSection() {
 							<span>
 								{' '}
 								dalam kategori{' '}
-								<span className="font-semibold text-emerald-600">
+								<span className="font-semibold text-[#34596F]">
 									{selectedFilter}
 								</span>
 							</span>
@@ -206,7 +213,7 @@ export default function UMKMSection() {
 					>
 						<motion.button
 							onClick={loadMore}
-							className="bg-white text-emerald-600 px-8 py-3 rounded-xl font-semibold border-2 border-emerald-200 hover:border-emerald-300 hover:bg-emerald-50 transition-all duration-300"
+							className="bg-white text-[#34596F] px-8 py-3 rounded-xl font-semibold border-2 border-[#E6EBEB] hover:border-[#84A9AC] hover:bg-[#F0F4F8] transition-all duration-300"
 							whileHover={{ scale: 1.05, y: -2 }}
 							whileTap={{ scale: 0.95 }}
 						>
