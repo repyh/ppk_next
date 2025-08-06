@@ -11,9 +11,10 @@ export async function generateStaticParams() {
 export default async function UMKMDetailPage({
 	params,
 }: {
-	params: { id: string };
+	params: Promise<{ id: string }>;
 }) {
-	const umkm = umkmData.find((u) => u.id.toString() === params.id);
+	const resolvedParams = await params;
+	const umkm = umkmData.find((u) => u.id.toString() === resolvedParams.id);
 
 	if (!umkm) {
 		notFound();
